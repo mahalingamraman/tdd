@@ -1,9 +1,9 @@
 let RepoInfo = class{
-  constructor(name, htmlUrl, updatedAt, subscribersCount) {
+  constructor(name, htmlUrl, updatedAt, size) {
     this.name = name
     this.htmlUrl = htmlUrl
     this.updatedAt = updatedAt
-    this.subscribersCount = subscribersCount
+    this.size = size
   }
 }
 

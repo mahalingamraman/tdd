@@ -18,13 +18,13 @@ async function repoDetails(username, repoName) {
                           <th>name</th>
                           <th>HTML URL</th>
                           <th>updatedAt</th>
-                          <th> subscribersCount </th>
+                          <th> size </th>
                         </tr>
                           <tr>
                             <td>${repoInfo.name}</td>
                             <td>${repoInfo.htmlUrl}</td>
                             <td>${repoInfo.updatedAt}</td>
-                            <td> ${repoInfo.subscribersCount} </td>
+                            <td> ${repoInfo.size} </td>
                           </tr>
                       
                       </table>

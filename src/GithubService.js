@@ -19,7 +19,7 @@ let githubService = {
           .get(`https://api.github.com/repos/${username}/${repoName}`)
           .then(function (response) {
               let repos = response.data
-              return new RepoInfo(repos.name, repos.html_url, repos.updated_at, repos.subscribers_count)
+              return new RepoInfo(repos.name, repos.html_url, repos.updated_at, repos.size)
           })
           .catch(function (error) {
               return []
