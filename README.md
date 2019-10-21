@@ -27,7 +27,7 @@ Typescript so it can be directly used with a typescript project as well
 To render conditionally an item can get the context which contains the following attributes:
 
 | property   |      type      |  description |
-|:------------|-------------:|------:|
+|:------------|:-------------|:------|
 | id | string  | id of the Dropdwon |
 | label | string  | Dropdwon Label/placeholder|
 | dataSource | array  | Dropdown Items  |
