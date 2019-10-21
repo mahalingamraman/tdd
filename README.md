@@ -17,3 +17,87 @@ https://gist.github.com/wiledal/3c5b63887cc8a010a330b89aacff2f2e
 
 Routing for SPA
 https://www.npmjs.com/package/vanilla-ui-router
+
+
+
+## Dropdown
+
+**cc-dropdown* are exported as an es module thus you would need a bundler to use it. It is also written in
+Typescript so it can be directly used with a typescript project as well
+
+### DropdownContext 
+
+To render conditionally an item can get the context which contains the following attributes:
+
+| property   |      type      |  description |
+|------------:|-------------:|------:|
+| id | string  | id of the Dropdwon |
+| label | string  | Dropdwon Label/placeholder|
+| dataSource | array  | Dropdwon items  |
+| placementPosition | top/bottom  | Options display placement  |
+| selectionChange | event | Dropdwon selected item Call back events to Application  |
+| disabled | disabled  | Dropdown disable option |
+| required | boolean  | Required validation |
+| typeahead | boolean  | Typeahead filter enabled/disabled|
+| typeaheadFilterType | startsWith/wildcard  | Dropdown filter type  |
+
+## Below is an example on how to use it Single Dropdown.
+
+```html
+    <cc-dropdown [id]="'single-dropdown'" 
+        name="checkbox" [label]="'Select a option'" 
+        [dataSource]='car' 
+        [placementPosition]="placementPosition[0].value" 
+        [(ngModel)]="selectedItem" 
+        (selectionChange)="onValueget($event)"
+        [disabled]="disabled"
+        [required]="required">
+    </cc-dropdown>
+```
+## Below is an example on how to use it Multiple Dropdown.
+
+```html
+<cc-dropdown name="checkbox" 
+    [label]="'Select Multiple Car'" 
+    [dataSource]='car' 
+    [placementPosition]="placementPosition[0].value" 
+    [(ngModel)]="selectedMultipleItem" 
+    (selectionChange)="onMultipleValueget($event)"
+    [disabled]="disabled" 
+    [required]="required" 
+    [multiple]="true">
+</cc-dropdown>
+```
+## Below is an example on how to use it  Dropdown with Typeahead Filter.
+
+```html
+<cc-dropdown 
+    [id]="'dropdown-typeahead'" 
+    name="checkbox" 
+    [label]="'Type Ahead'" 
+    [dataSource]='car'
+    [placementPosition]="placementPosition[0].value" 
+    [(ngModel)]="selectedTypeAheadItem" 
+    (selectionChange)="onTypeAheadValueget($event)"
+    [disabled]="disabled" 
+    [required]="required" 
+    [typeahead]="true" 
+    [typeaheadFilterType]="'wildcard'">
+</cc-dropdown>
+```
+
+## Sample dataSource 
+```javascript
+public car = [
+    {label: 'Audi', value: 'Audi'},
+    {label: 'BMW', value: 'BMW',disabled:true},
+    {label: 'Ford', value: 'Ford'},
+    {label: 'Honda', value: 'Honda'},
+    {label: 'Jaguar', value: 'Jaguar'},
+    {label: 'Mercedes', value: 'Mercedes'},
+    {label: 'Renault', value: 'Renault'},
+    {label: 'VW', value: 'VW'},
+    {label: 'Volvo', value: 'Volvo'},
+    {label: 'Fiat', value: 'Fiat'}
+];
+```
