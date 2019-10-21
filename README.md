@@ -17,7 +17,6 @@ https://gist.github.com/wiledal/3c5b63887cc8a010a330b89aacff2f2e
 
 Routing for SPA
 https://www.npmjs.com/package/vanilla-ui-router
-
 ## Dropdown
 
 **cc-dropdown* are exported as an es module thus you would need a bundler to use it. It is also written in
@@ -28,7 +27,7 @@ Typescript so it can be directly used with a typescript project as well
 To render conditionally an item can get the context which contains the following attributes:
 
 | property   |      type      |  description |
-|------------:|-------------:|------:|
+|:------------|-------------:|------:|
 | id | string  | id of the Dropdwon |
 | label | string  | Dropdwon Label/placeholder|
 | dataSource | array  | Dropdown Items  |
