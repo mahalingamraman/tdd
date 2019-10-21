@@ -18,8 +18,6 @@ https://gist.github.com/wiledal/3c5b63887cc8a010a330b89aacff2f2e
 Routing for SPA
 https://www.npmjs.com/package/vanilla-ui-router
 
-
-
 ## Dropdown
 
 **cc-dropdown* are exported as an es module thus you would need a bundler to use it. It is also written in
@@ -33,11 +31,13 @@ To render conditionally an item can get the context which contains the following
 |------------:|-------------:|------:|
 | id | string  | id of the Dropdwon |
 | label | string  | Dropdwon Label/placeholder|
-| dataSource | array  | Dropdwon items  |
+| dataSource | array  | Dropdown Items  |
 | placementPosition | top/bottom  | Options display placement  |
 | selectionChange | event | Dropdwon selected item Call back events to Application  |
 | disabled | disabled  | Dropdown disable option |
 | required | boolean  | Required validation |
+| multipleWithButton | {applyLabel:'Apply',cancelLabel:'Cancel'} | Apply label/Cancel label | 
+| expanded | array | Selected Item array|
 | typeahead | boolean  | Typeahead filter enabled/disabled|
 | typeaheadFilterType | startsWith/wildcard  | Dropdown filter type  |
 
@@ -66,6 +66,37 @@ To render conditionally an item can get the context which contains the following
     [disabled]="disabled" 
     [required]="required" 
     [multiple]="true">
+</cc-dropdown>
+```
+## Below is an example on how to use it  Dropdown with button.
+
+```html
+<cc-dropdown name="checkbox" 
+    [label]="'Select Multiple With Button'" 
+    [dataSource]='car' 
+    [placementPosition]="placementPosition[0].value" 
+    [(ngModel)]="selectedMultipleWithBtn" 
+    (selectionChange)="onMultipleBtnValuegetBtn($event)"
+    [disabled]="disabled" 
+    [required]="required" 
+    [multipleWithButton]="{applyLabel:'Apply',cancelLabel:'Cancel'}">
+</cc-dropdown>
+```
+
+## Below is an example on how to use it  Dropdown button selected option .
+
+```html
+<cc-dropdown name="checkbox" 
+    [label]="'Select Multiple Option'" 
+    [dataSource]='car' 
+    [placementPosition]="placementPosition[0].value" 
+    [(ngModel)]="selectedMultipleExpandedItem" 
+    (selectionChange)="onMultipleBtnValueget($event)"
+    [disabled]="disabled" 
+    [required]="required" 
+    [multiple]="true" 
+    [expanded]="'selected'" 
+    [clearAllLabel]="'Clear All'">
 </cc-dropdown>
 ```
 ## Below is an example on how to use it  Dropdown with Typeahead Filter.
